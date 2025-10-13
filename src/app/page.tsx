@@ -4,7 +4,7 @@ import Form from 'next/form';
 import Image from "next/image";
 import Question from './components/Question';
 import { useEffect, useState } from 'react';
-import Request from './Utils/Request';
+import {getLevel, getQuestions} from './Utils/Request';
 import QuestionsFormatter from '../types/QuestionsResponseType';
 import MaturityLevel from './components/MaturityLevel';
 
@@ -20,7 +20,7 @@ export default function Home() {
   // => Carrega questões na construção da tela 
   useEffect(() => {
     async function fetchData() {
-      let response: QuestionsFormatter[] =  await Request.getQuestions();
+      let response: QuestionsFormatter[] =  await getQuestions();
       setQuestions(response);
     }
 
@@ -55,7 +55,7 @@ export default function Home() {
     // conforme o total, carrega a classificação por faixa
     setScore(total);
 
-    setLevel(await Request.getLevel(total));
+    setLevel(await getLevel(total));
 
   }
 
