@@ -65,9 +65,9 @@ export default function Home() {
         <Image 
           src='/img/Logo_Branco.png'
           alt=''
-          width={190}
-          height={70}
-          style={{position: 'absolute'}}
+          width={135}
+          height={50}
+          style={{position: 'absolute', 'top': "25px"}}
         />
       </div>
       <div className="container">
@@ -91,6 +91,21 @@ export default function Home() {
 
                   {questions.map((item) => (
                     <div key={crypto.randomUUID()}>
+                      { counter == 5 &&
+                        <div className="section-header">
+                          <h2>Gestão de Riscos e Conformidade</h2>
+                          <p>Avalie como sua organização gerencia riscos e conformidade relacionados à IA</p>
+                        </div>
+                      }
+
+                      { counter == 8 && 
+                        <div className="section-header">
+                          <h2>Estrutura Organizacional</h2>
+                          <p>Avalie a estrutura organizacional para gestão de IA</p>
+                      </div>
+                      }
+
+                      
                       <Question question={item} counter={counter++}  key={crypto.randomUUID()} onCheckedChange={(id: string) => onQuestionSelected(id)} />
                     </div>
                     ))}

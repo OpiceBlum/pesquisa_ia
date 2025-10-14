@@ -5,16 +5,9 @@ import QuestionsFormatter from '../../types/QuestionsResponseType';
 import {callGetLevel, callGetQuestions} from '../../services/FirebaseRequest';
 
 export async function getQuestions(): Promise<QuestionsFormatter[]>{
-    let route:string = `${process.env.NEXT_PUBLIC_API_URL}/getQuestions`;
-
-    if(process.env.NEXT_PUBLIC_NODE_ENV == 'PROD') {
-        route = process.env.NEXT_PUBLIC_ROUTE_GET_QUESTIONS||route
-    }
-    
     try{    
         const response: any = await callGetQuestions();
 
-        console.log(response)
         return response;
     }catch(error) {
         console.error(error)

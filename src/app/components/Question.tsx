@@ -15,7 +15,7 @@ export default function Question(props: any)
 
     return(
         <div className="question-block">
-            <h3>{props.counter}. {props.question.description}</h3>
+            <h3>{props.question.index}. {props.question.description}</h3>
             <div className="options" >
                 {responses.map((res:any) => (
                     <button className="option" onClick={handleClick} value={`q${props.counter}${res.weight}`} key={crypto.randomUUID()}>

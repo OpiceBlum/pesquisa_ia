@@ -1,6 +1,7 @@
 type QuestionsFormatter = {
-    Description: String,
+    Description: String
     responses: ResponseQuestion[]
+    index: number
 };
 
 type ResponseQuestion = {

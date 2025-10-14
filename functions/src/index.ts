@@ -1,6 +1,6 @@
 import {setGlobalOptions} from "firebase-functions";
 import {onRequest} from "firebase-functions/v2/https";
-import * as logger from "firebase-functions/logger";
+
 import QuestionsController from "./Controllers/QuestionsController";
 import LevelController from "./Controllers/LevelController";
 
@@ -13,13 +13,13 @@ export const getQuestions = onRequest(
       response.status(405).send();
     }
 
-    logger.info("Iniciando requisição GetQuestions!", {structuredClone: true});
     const controller = new QuestionsController();
     let res;
 
     res = await controller.getAll();
+  
 
-    response.send(res);
+    response.header({"contentType": "application/json"}).send(res);
   }
 )
 
