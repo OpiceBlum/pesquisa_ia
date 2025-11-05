@@ -20,7 +20,7 @@ export default function Question(props: any)
                 {responses.map((res:any) => (
                     <button className="option" onClick={handleClick} value={`q${props.counter}${res.weight}`} key={crypto.randomUUID()}>
                         <input type="radio" name={`q${props.counter}`} value={res.weight} id={`q${props.counter}${res.weight}`}/>
-                        <label>{res.response}</label>
+                        <label className='question_text'>{res.response}</label>
                     </button>
                 ))}
             </div>

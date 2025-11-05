@@ -309,3 +309,7 @@ body {
 .content {
   animation: blurIn 0.7s ease-in;
 }
+
+.question_text {
+  text-align: left;
+}
