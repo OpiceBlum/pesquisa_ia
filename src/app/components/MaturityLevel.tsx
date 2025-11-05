@@ -57,10 +57,13 @@ export default function MaturityLevel(props?: PropsMaturity|undefined) {
                     )}
                   </ul>
                 </div>
-                <div className="cta-section">
-                  <h4>Próximo Passo Recomendado</h4>
-                  <p>{props?.nextSteps}</p>
-                </div>
+                
+                  {props?.nextSteps && 
+                    <div className="cta-section">
+                      <h4>Próximo Passo Recomendado</h4>
+                      <p>{props?.nextSteps}</p>
+                    </div>
+                  }
               </div>
         </>
     )
