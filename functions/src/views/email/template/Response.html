@@ -1,4 +1,28 @@
-* {
+<!DOCTYPE html>
+<body>
+    <div id="result" class="result" style="display: block">
+        <h3>{{spanTitle}}</h3>
+        <div class="cmmi-level">
+            <h5>Nível de Maturidade Organizacional</h5>
+            <p><strong>Nível {{level}} - {{title}}</strong></p>
+            <p style="fontSize: 0.9em; marginTop: 10px">Pontuação: {{score}} pontos (de {{minScore}} a {{totalScore}})</p>
+        </div>
+        <div class="{{className}}">
+            <p>{{descriptionLevel}}</p>
+        </div>
+        <div class="recommendations">
+            <h4>Plano de Ação Específico</h4>
+            <ul>
+            {{#plan}}
+                <li>{{desc}}</li>
+            {{/plan}}
+            </ul>
+        </div>
+    </div>
+</body>
+
+<style>
+    * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -313,188 +337,4 @@ body {
 .question_text {
   text-align: left;
 }
-
-/* 🔹 Modal wrapper */
-.modal {
-  /*display: none;  hidden */
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  max-height: 100%;
-  backdrop-filter: blur(5px);
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-/* 🔹 Modal container */
-.modal-container {
-  position: relative;
-  padding: 1rem;
-  width: 100%;
-  max-width: 42rem; /* ~max-w-2xl */
-  top:30%;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 100%;
-}
-
-/* 🔹 Modal content */
-.modal-content {
-  position: relative;
-  background: #FFF;
-  border: 1px solid #27ae60;
-  border-radius: 15px;
-  padding: 1rem;
-}
-
-@media (min-width: 768px) {
-  .modal-content {
-    padding: 1.5rem;
-  }
-}
-
-/* 🔹 Header */
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #27ae60;
-  padding-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .modal-header {
-    padding-bottom: 1.25rem;
-  }
-}
-
-@media(max-width: 1024px) {
-  .modal-container {
-    left: 17%;
-  }
-}
-
-@media(max-width: 850px) {
-  .modal-container {
-    left: 0%;
-  }
-}
-
-.modal-title {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #27ae60;
-}
-
-/* 🔹 Close button */
-.modal-close-btn {
-  color: #000000;
-  background: transparent;
-  border-radius: 50%;
-  width: 2.25rem;
-  height: 2.25rem;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.modal-close-btn:hover {
-  background: #27ae60;
-  color: #FFF;
-}
-
-.modal-close-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-/* 🔹 Body */
-.modal-body {
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .modal-body {
-    padding: 1.5rem 0;
-    gap: 1.5rem;
-  }
-}
-
-.modal-text {
-  color: #000;
-  line-height: 1.625;
-}
-
-/* 🔹 Footer */
-.modal-footer {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #27ae60;
-  gap: 1rem;
-  padding-top: 1rem;
-}
-
-@media (min-width: 768px) {
-  .modal-footer {
-    padding-top: 1.25rem;
-  }
-}
-
-/* 🔹 Buttons */
-.btn-accept {
-  color: #fff;
-  background: #32d74b;
-  border: 1px solid transparent;
-  padding: 0.625rem 1rem;
-  border-radius: 15px;
-  font-weight: 500;
-  line-height: 1.25rem;
-  cursor: pointer;
-}
-
-.btn-accept:hover {
-  background: #333333;
-}
-
-.btn-accept:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #27ae60;
-}
-
-.btn-decline {
-  color: #e74c3c;
-  background: #FFF;
-  border: none;
-  border-radius: 15px;
-  padding: 0.625rem 1rem;
-  font-weight: 500;
-  line-height: 1.25rem;
-  cursor: pointer;
-}
-
-.btn-decline:hover {
-  color: #000;
-}
-
-.btn-decline:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #f5c6cb;
-}
-
-.moda-input-email {
-  line-height: 27px;
-  width: 350px;
-  border-radius: 15px;
-  border: 1px solid #27ae60;
-  padding-left: 10px;
-}
+</style>

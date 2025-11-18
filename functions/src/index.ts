@@ -30,10 +30,10 @@ export const getLevel = onRequest(
     response.status(405).send();
   }
 
-  const {score} = request.body;
+  const {score, email} = request.body;
   const controller = new LevelController();
 
-  const result = await controller.getLevelByScore(Number(score));
+  const result = await controller.getLevelByScore(Number(score), email);
 
   response.send(result.pop());
 

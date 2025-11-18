@@ -16,10 +16,11 @@ export async function getQuestions(): Promise<QuestionsFormatter[]>{
 }
 
 
-export async function getLevel(score: number): Promise<any> {
+export async function getLevel(score: number, email?: string): Promise<any> {
     
     const payload:any = {
-        "score": score
+        "score": score,
+        "email": email
     }
 
     try{

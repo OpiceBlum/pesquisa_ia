@@ -1,0 +1,63 @@
+[debug] [2025-11-18T18:06:33.681Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T18:06:33.683Z] Command:       /home/joao/.nvm/versions/node/v20.19.3/bin/node /home/joao/.nvm/versions/node/v20.19.3/bin/firebase deploy
+[debug] [2025-11-18T18:06:33.684Z] CLI Version:   14.24.2
+[debug] [2025-11-18T18:06:33.684Z] Platform:      linux
+[debug] [2025-11-18T18:06:33.684Z] Node Version:  v20.19.3
+[debug] [2025-11-18T18:06:33.684Z] Time:          Tue Nov 18 2025 15:06:33 GMT-0300 (Brasilia Standard Time)
+[debug] [2025-11-18T18:06:33.684Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T18:06:33.986Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-18T18:06:33.987Z] > authorizing via signed-in user (joao.santos@opiceblum.com.br)
+[debug] [2025-11-18T18:06:33.987Z] [iam] checking project opicepesquisaai for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-18T18:06:33.989Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:33.989Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:33.990Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/opicepesquisaai:testIamPermissions [none]
+[debug] [2025-11-18T18:06:33.991Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/opicepesquisaai:testIamPermissions x-goog-quota-user=projects/opicepesquisaai
+[debug] [2025-11-18T18:06:33.991Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/opicepesquisaai:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-18T18:06:35.056Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/opicepesquisaai:testIamPermissions 200
+[debug] [2025-11-18T18:06:35.057Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/opicepesquisaai:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-18T18:06:35.057Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:35.057Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:35.058Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/opicepesquisaai/serviceAccounts/opicepesquisaai@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-11-18T18:06:35.058Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/opicepesquisaai/serviceAccounts/opicepesquisaai@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-11-18T18:06:35.975Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/opicepesquisaai/serviceAccounts/opicepesquisaai@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-11-18T18:06:35.975Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/opicepesquisaai/serviceAccounts/opicepesquisaai@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-11-18T18:06:35.976Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:35.977Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:35.977Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/opicepesquisaai [none]
+[debug] [2025-11-18T18:06:36.546Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/opicepesquisaai 200
+[debug] [2025-11-18T18:06:36.546Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/opicepesquisaai {"projectId":"opicepesquisaai","projectNumber":"783300581629","displayName":"opicepesquisaai","name":"projects/opicepesquisaai","resources":{"hostingSite":"opicepesquisaai"},"state":"ACTIVE","etag":"1_a2c0fb64-7dcf-4d80-84c1-d63fba23c79c"}
+[debug] [2025-11-18T18:06:38.519Z] defaultcredentials: writing to file /home/joao/.config/firebase/joao_santos_opiceblum.com.br_application_default_credentials.json
+[debug] [2025-11-18T18:06:38.523Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:38.523Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:38.523Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites pageToken=&pageSize=10
+[debug] [2025-11-18T18:06:39.762Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites 200
+[debug] [2025-11-18T18:06:39.762Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites {"sites":[{"name":"projects/opicepesquisaai/sites/opicepesquisaai","defaultUrl":"https://opicepesquisaai.web.app","appId":"1:783300581629:web:195d79831a9c9e5723c694","type":"DEFAULT_SITE"}]}
+[debug] [2025-11-18T18:06:39.763Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:39.763Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:39.764Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:783300581629:web:195d79831a9c9e5723c694/config [none]
+[debug] [2025-11-18T18:06:40.681Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:783300581629:web:195d79831a9c9e5723c694/config 200
+[debug] [2025-11-18T18:06:40.681Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:783300581629:web:195d79831a9c9e5723c694/config {"projectId":"opicepesquisaai","appId":"1:783300581629:web:195d79831a9c9e5723c694","storageBucket":"opicepesquisaai.firebasestorage.app","apiKey":"AIzaSyDqCx_7PM-izAiYkcZfAg5r5AXO_GfYZrE","authDomain":"opicepesquisaai.firebaseapp.com","messagingSenderId":"783300581629","projectNumber":"783300581629","version":"2"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-11-18T18:06:44.732Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:44.732Z] Checked if tokens are valid: true, expires at: 1763490421353
+[debug] [2025-11-18T18:06:44.732Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites/opicepesquisaai [none]
+[debug] [2025-11-18T18:06:44.960Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites/opicepesquisaai 200
+[debug] [2025-11-18T18:06:44.960Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/opicepesquisaai/sites/opicepesquisaai {"name":"projects/opicepesquisaai/sites/opicepesquisaai","defaultUrl":"https://opicepesquisaai.web.app","appId":"1:783300581629:web:195d79831a9c9e5723c694","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.5.4
+
+[info]    - Environments: .env
+
+
+[info]    Creating an optimized production build ...
+
