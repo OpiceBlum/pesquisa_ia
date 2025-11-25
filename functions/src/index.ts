@@ -1,4 +1,4 @@
-import {setGlobalOptions} from "firebase-functions";
+import {logger, setGlobalOptions} from "firebase-functions";
 import {onRequest} from "firebase-functions/v2/https";
 
 import QuestionsController from "./Controllers/QuestionsController";
@@ -9,6 +9,7 @@ setGlobalOptions({ maxInstances: 10 });
 export const getQuestions = onRequest(
   {cors: true}, 
   async (request, response) => {
+    logger.debug("[DEBUG] GetQuestions - Iniciando Requisição.");
     if(request.method != 'GET') {
       response.status(405).send();
     }
@@ -26,15 +27,16 @@ export const getQuestions = onRequest(
 export const getLevel = onRequest(
   {cors: true}, 
   async (request, response) => {
-  if(request.method != 'POST') {
-    response.status(405).send();
-  }
+    logger.debug("[DEBUG] GetLevel - Iniciando Requisição.");
+    if(request.method != 'POST') {
+      response.status(405).send();
+    }
 
-  const {score, email} = request.body;
-  const controller = new LevelController();
+    const {score, email} = request.body;
+    const controller = new LevelController();
 
-  const result = await controller.getLevelByScore(Number(score), email);
+    const result = await controller.getLevelByScore(Number(score), email);
 
-  response.send(result.pop());
+    response.send(result.pop());
 
 })

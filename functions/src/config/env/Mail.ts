@@ -8,4 +8,5 @@ const EnvMail = {
     mailFrom: process.env.MAIL_FROM || "comunicacao@opiceblum.com.br"
 }
 
+
 export default EnvMail;

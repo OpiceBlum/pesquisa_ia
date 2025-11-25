@@ -126,7 +126,7 @@ export default function Home() {
 
           <div className="header">
               <h1>Diagnóstico: descubra se sua empresa precisa de governança de IA</h1>
-              <p>Responda 10 perguntas sobre o uso de Inteligência Artificial na sua organização e receba uma avaliação com recomendações para o seu nível de maturidade</p>
+              <p>Responda 10 perguntas sobre o uso de Inteligência Artificial na sua organização e receba uma avaliação preliminar com recomendações para o seu nível de maturidade</p>
               
               <div className="progress-bar">
                   <div className="progress-fill" id="progressFill"></div>
