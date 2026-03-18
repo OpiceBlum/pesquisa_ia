@@ -16,11 +16,18 @@ const auth = new GoogleAuth({
     });
 
 
-export async function callGetQuestions(): Promise<QuestionsFormatter[]> {
+export async function callGetQuestions(eca: Boolean = false): Promise<QuestionsFormatter[]> {
     let targetAudience = `https://${process.env.GOOGLE_CLOUD_REGION}-${process.env.GOOGLE_PROJECT_ID}.cloudfunctions.net/${process.env.ROUTE_GET_QUESTIONS}`;
     if(process.env.NODE_ENV == 'development') {
         targetAudience = process.env.API_URL + "/getQuestions" || targetAudience;
     }
+
+    if(eca){
+        targetAudience += "?eca=true"
+    }
+
+    console.log(targetAudience)
+
     const client = await auth.getIdTokenClient(targetAudience);
     
     const res: any = await client.request({url: targetAudience, method: "GET"});
@@ -34,6 +41,20 @@ export async function callGetLevel(payload: any): Promise<any> {
     if(process.env.NODE_ENV == 'development') {
         targetAudience = `${process.env.API_URL}/${process.env.ROUTE_GET_LEVEL}` || targetAudience;
     }
+    const client = await auth.getIdTokenClient(targetAudience);
+
+    const res: any = await client.request({url: targetAudience, method: "POST", data: payload});
+    
+    return res;
+}
+
+export async function callGetCalc(payload: any): Promise<any> {
+    let targetAudience = `https://${process.env.GOOGLE_CLOUD_REGION}-${process.env.GOOGLE_PROJECT_ID}.cloudfunctions.net/${process.env.ROUTE_GET_LEVEL}`;
+    if(process.env.NODE_ENV == 'development') {
+        targetAudience = `${process.env.API_URL}/${process.env.ROUTE_GET_LEVEL}` || targetAudience;
+    }
+
+    targetAudience += '?eca=true'
     const client = await auth.getIdTokenClient(targetAudience);
 
     const res: any = await client.request({url: targetAudience, method: "POST", data: payload});

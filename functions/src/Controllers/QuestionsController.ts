@@ -1,4 +1,4 @@
-import QuestionsFormatter from "./../types/QuestionsResponseType";
+import QuestionsFormatter, {QuestionsECAFormatter} from "./../types/QuestionsResponseType";
 import Database from "../config/database";
 export default class QuestionsController {
     async getAll(): Promise<QuestionsFormatter[]> { 
@@ -8,6 +8,14 @@ export default class QuestionsController {
         
         const sortedData = this.sort(data);
         return sortedData;
+    }
+
+    async getAllEca(): Promise<QuestionsECAFormatter[]>{
+        const db = new Database();
+        const data:any = await db.fetchQuestions(true);
+
+        const sortedData = this.sort(data)
+        return sortedData
     }
 
 

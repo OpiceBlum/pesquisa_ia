@@ -60,7 +60,7 @@ export default class MicrosoftClient {
         await this.getAccessToken();
 
         try{
-            const response = await axios.post(endpoint, message, {
+            await axios.post(endpoint, message, {
                     headers: {
                     Authorization: `Bearer ${this.accessToken}`,
                     'Content-Type': 'application/json'

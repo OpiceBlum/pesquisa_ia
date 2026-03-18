@@ -19,9 +19,14 @@ class Database {
         this.db = getFirestore(this.app);
 
     }
-    async fetchQuestions(): Promise<any> {
+    async fetchQuestions(eca:Boolean = false): Promise<any> {
         
-        const querySnapshot = await getDocs(collection(this.db, 'questions'));
+        let coll = 'questions'
+
+        if(eca){
+            coll = 'eca_questions'
+        }
+        const querySnapshot = await getDocs(collection(this.db, coll));
         const data = querySnapshot.docs.map((doc:any) => ({
             id: doc.id,
             ...doc.data()

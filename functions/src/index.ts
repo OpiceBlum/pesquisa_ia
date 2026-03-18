@@ -16,8 +16,13 @@ export const getQuestions = onRequest(
 
     const controller = new QuestionsController();
     let res;
+    
 
-    res = await controller.getAll();
+    if(request.query['eca'] == 'true') {
+      res = await controller.getAllEca();
+    } else {
+      res = await controller.getAll();
+    }
   
 
     response.header({"contentType": "application/json"}).send(res);
@@ -35,8 +40,12 @@ export const getLevel = onRequest(
     const {score, email} = request.body;
     const controller = new LevelController();
 
-    const result = await controller.getLevelByScore(Number(score), email);
 
+
+    const result = request.query['eca'] ? await controller.getResultByEca(request.body.questions, email) : await controller.getLevelByScore(Number(score), email);
+
+    logger.debug("Resultado")
+    logger.debug(result)
     response.send(result.pop());
 
 })
